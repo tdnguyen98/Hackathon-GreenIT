@@ -2,6 +2,7 @@
 
 ## Problemes
 - Isoler les activites sur une machine
+- Le monitoring (par exemple *Activity Monitor*) consomme lui-même beaucoup de ressources et peut donc fausser ou compliquer le calcul
 - marge d'erreur plus grosse que consommation du programme pour beaucoup de programmes
 
 ## Questions
