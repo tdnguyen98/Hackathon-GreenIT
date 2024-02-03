@@ -28,6 +28,7 @@
 - Apps comme: Mac Power Monitor, ...
 - RAPL (Running Average Power Limit): Available on modern Intel and AMD processors, RAPL allows for the monitoring of power usage across various components of the CPU and memory. While RAPL itself is a hardware feature, various software interfaces and libraries (like pyRAPL) can access these metrics, making it somewhat cross-platform at the application level.
 
+### Software
 - [**Activity Monitor** > Energy](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/MonitoringEnergyUsage.html):
 	- **Energy Impact.** Assigns an energy impact score to your app, based on how efficiently it is operating. A variety of factors are taken into account when this score is assigned, including CPU usage, network activity, disk I/O, and more.
 	- **Avg Energy Impact.** Indicates the average energy impact score over the past 8 hours, or since the time the Mac was restarted.
