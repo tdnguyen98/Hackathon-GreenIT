@@ -7,6 +7,10 @@
 - Le monitoring (par exemple *Activity Monitor*) consomme lui-même beaucoup de ressources et peut donc fausser ou compliquer le calcul
 - marge d'erreur plus grosse que consommation du programme pour beaucoup de programmes
 - Pas vraiment calculable directement, du coup c'est une estimation, et pour arriver au kWh on fait des estimations sur des estimnations sur des estimations, du coup la marge d'erreur est enorme, et le calcul perd en pertinence. Du coup les approches existantes sont pas tellement sur la mesure precise mais plus thematique ou fonctionnelle, par exemple on voit que telle application est gourmande en CPU, donc on utilise des pratiques specifiques pour optimiser son usage du CPU, ou de la memoire, etc. sans chercher un benchmark precis qui est difficilement atteignable.
+- [Calculer la consoation d'energie d'un programme en C ?](https://stackoverflow.com/questions/40707136/energy-consumption-of-an-algorithm-in-c-code)
+> It is much simpler (for certain degrees of "simple") to count the assembler commands and multiply them with the respective latencies (Listed in the technical specs, e.g. for a randomly chosen MCU from the Wiki list: http://www.atmel.com/Images/doc32002.pdf). This is still not exact, division for example might take a different amount of CPU cycles depending on the input, CPU architecture and implementation in the hardware, but it comes quite close and is rather simple, although a bit tedious.
+
+> And than there are the loops with a completely unknown number of iterations, input taking different paths with different runtimes and much more. The people writing encryption software know more about it, especially how to avoid it. You might not like their solutions.
 
 ### Questions
 - A quel point la surcharge compte dans la consommation totale ?
