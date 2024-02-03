@@ -15,6 +15,7 @@
 ## Observations
 - La mesure de l'utilisation du CPU, RAM, ... est instantanee
 - Activity monitor separe l-usage du CPU selon que le process est lie au systeme ou aux activites de l-utilisateur, notamment les apps lancees
+- Le choix du language importe beaucoup, si l'on veut utiliser moins d'energie, on devrait plutot s'orienter vers des language comme C, RUST et C++
 
 # Idée
 - formule pour convertir l'utilisation mesuree des ressources (CPU, RAM, systeme?) en kWh (watts heure)
