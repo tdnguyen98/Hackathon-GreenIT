@@ -23,6 +23,7 @@
 - formule pour convertir l'utilisation mesuree des ressources (CPU, RAM, systeme?) en kWh (watts heure)
 
 ## Outils
+Voir le fichier [Outils-de-mesure.md](Outils-de-mesure.md) pour une discussion detaillee
 ### Hardware
 - [JouleScope]([url](https://www.joulescope.com/)): This is a hardware-based tool rather than software, but it's worth mentioning because it can monitor the energy use of any device it's connected to, regardless of the operating system.
 - Apps comme: Mac Power Monitor, ...
