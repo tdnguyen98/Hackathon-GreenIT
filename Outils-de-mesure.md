@@ -26,7 +26,7 @@
 
 ### Outils Linux
 -  **[PowerAPI]([url](https://powerapi.org/reference/overview/))**:
-	- Solution libre (FOSS: free and open source software) developpee en ce moment par des universites francaises, actuellement uniquement disponible sur Linux. La solution propose un modele general pour estimer la consommation electrique d'un programme (voir point suivant).
+	- Solution libre (FOSS: free and open source software) developpee en ce moment par des universites francaises, actuellement uniquement disponible sur Linux, bien que la solution soit aussi un modele general pour estimer la consommation electrique d'un programme (voir point suivant). Focalisee sur la consommation electrique des serveurs (voir [publication scientifique sur SmartWatts](https://inria.hal.science/hal-02470128).
 	- Fonctionnement:
  		- un *Sensor* qui collecte des donnees brutes correlees avec la consommation electrique de la machine.
      <br> => actuellement, uniquement [HWPC (HardWare Performance Counter)](https://powerapi.org/reference/sensors/hwpc-sensor/), un outil mesurant la performance et consommation de CPUs Intel (Sandy Bridge et plus recents, donc post-2011) et AMD Zen (1,2,34). Les processeurs de type Powe/ARM/RISCV ne sont pas supportes. HWPC [exploite](https://github.com/powerapi-ng/hwpc-sensor) l'API `perf` du kernel Linux, uniquement accessible au *root*, et la technologie RAPL. Le senseur ne peut pas etre utilise dans une machine virtuelle.
