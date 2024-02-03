@@ -1,21 +1,22 @@
-Problemes
+# Brainstorming
+
+## Problemes
 - Isoler les activites sur une machine
 - marge d'erreur plus grosse que consommation du programme pour beaucoup de programmes
 
-Questions
+## Questions
 - A quel point la surcharge compte dans la consommation totale ?
 - Comment creer un environnement stable pour avoir des mesures consistantes et precises
 - while versus for
 - les FLOPS (floating operations per second) comme unite de mesure ?
 
 
-Observations
+## Observations
 - La mesure de l'utilisation du CPU, RAM, ... est instantanee
 - Activity monitor separe l-usage du CPU selon que le process est lie au systeme ou aux activites de l-utilisateur, notamment les apps lancees
 
-# idee
+# Idée
 - formule pour convertir l'utilisation mesuree des ressources (CPU, RAM, systeme?) en kWh (watts heure)
-
 
 # Outils
 - Mac Power Monitor
@@ -38,7 +39,8 @@ Observations
 |**Idle**|**CPU Max**|**Idle**|**CPU Max**|
 |74W|295W|252 BTU/h|1007 BTU/h|
 
-# Bonne manière à prendre pour coder de manière general :
+
+# Bonnes pratiques pour coder de manière general :
 
 Yes, the way you code your source code can impact the power consumption of the device. While individual lines of code may not directly influence power consumption, the overall design, algorithms, and programming practices can have an indirect impact on energy efficiency. Here are some aspects to consider:
 
