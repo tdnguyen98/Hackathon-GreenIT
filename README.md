@@ -1,27 +1,29 @@
-# Brainstorming
+# Comment mesurer le cout electrique d'un software
 
-## Problemes
+## Brainstorming
+
+### Problemes
 - Isoler les activites sur une machine
 - Le monitoring (par exemple *Activity Monitor*) consomme lui-même beaucoup de ressources et peut donc fausser ou compliquer le calcul
 - marge d'erreur plus grosse que consommation du programme pour beaucoup de programmes
 
-## Questions
+### Questions
 - A quel point la surcharge compte dans la consommation totale ?
 - Comment creer un environnement stable pour avoir des mesures consistantes et precises
 - while versus for
 - les FLOPS (floating operations per second) comme unite de mesure ?
 
 
-## Observations
+### Observations
 - La mesure de l'utilisation du CPU, RAM, ... est instantanee
 - Activity monitor separe l-usage du CPU selon que le process est lie au systeme ou aux activites de l-utilisateur, notamment les apps lancees
 - Le choix du language importe beaucoup, si l'on veut utiliser moins d'energie, on devrait plutot s'orienter vers des language comme C, RUST et C++
 
-# Idée
+## Idée
 - formule pour convertir l'utilisation mesuree des ressources (CPU, RAM, systeme?) en kWh (watts heure)
 
-# Outils
-## Hardware
+## Outils
+### Hardware
 - [JouleScope]([url](https://www.joulescope.com/)): This is a hardware-based tool rather than software, but it's worth mentioning because it can monitor the energy use of any device it's connected to, regardless of the operating system.
 - Apps comme: Mac Power Monitor, ...
 - RAPL (Running Average Power Limit): Available on modern Intel and AMD processors, RAPL allows for the monitoring of power usage across various components of the CPU and memory. While RAPL itself is a hardware feature, various software interfaces and libraries (like pyRAPL) can access these metrics, making it somewhat cross-platform at the application level.
@@ -45,7 +47,7 @@
 |74W|295W|252 BTU/h|1007 BTU/h|
 
 
-# Bonnes pratiques pour coder de manière general :
+## Bonnes pratiques pour coder de manière general :
 
 Yes, the way you code your source code can impact the power consumption of the device. While individual lines of code may not directly influence power consumption, the overall design, algorithms, and programming practices can have an indirect impact on energy efficiency. Here are some aspects to consider:
 
@@ -73,9 +75,9 @@ Some frameworks and libraries are designed with energy efficiency in mind, provi
 
 It's important to note that the impact of code optimizations on power consumption may vary depending on the specific hardware architecture and the workload of the application. Therefore, it's recommended to profile and measure the energy consumption of your code using specialized tools on the target platform to make informed decisions about optimizations.
 
-# Explanaition of point 3 and 4
+### Explanation of point 3 and 4
 
-### 1. I/O Operations:
+#### 1. I/O Operations:
 
 **Explanation:** I/O (Input/Output) operations involve reading from or writing to external sources, such as files, databases, or network resources. These operations can be relatively slow compared to CPU-bound tasks, and excessive I/O operations, especially in tight loops, can lead to increased power consumption.
 
@@ -91,7 +93,7 @@ It's important to note that the impact of code optimizations on power consumptio
 - **Caching:** Cache frequently accessed data to reduce the need for repeated I/O operations.
 - **Asynchronous I/O:** Use asynchronous I/O operations to allow the program to continue executing other tasks while waiting for I/O completion.
 
-### 2. Concurrency and Parallelism:
+#### 2. Concurrency and Parallelism:
 
 **Explanation:** Concurrency and parallelism involve executing multiple tasks simultaneously. Concurrency typically deals with managing multiple tasks without necessarily running them simultaneously, while parallelism involves the simultaneous execution of tasks on multiple processors or cores.
 
@@ -107,7 +109,7 @@ It's important to note that the impact of code optimizations on power consumptio
 - **Fine-Grained Locking:** Minimize the use of locks and use fine-grained locking strategies to reduce contention and synchronization overhead.
 - **Task Decomposition:** Break down tasks into smaller, independent subtasks that can be executed in parallel.
 
-# Conseils
+## Conseils
 - I have been doing a lot of energy optimization (for squeezing more battery life for smart watch). The principle is simple, energy efficiency is just another step in optimizing. You optimize first for memory usage, then cpu and finally for energy efficiency. And simplest way to see each step, is to first not store or duplicate what you don't need, then don't compute what you don't need and you will have energy efficiency. Energy efficiency come from not hitting the main memory and staying in the cpu cache as much as possible. It comes also from less branch prediction (every branch prediction that is incorrect has to be undone and restarted, consume energy).
 
 From there, you will understand that some language and architecture are better than others for energy efficiency. In the architecture side of things, if you service doesn't need to run, it just shouldn't (this give advantage to things like lambda), but if it should run all the time, the starting cost of lambda would be counter productive. In term of language, most of the time you might want to go with compiled language. The main issue that you will face trying to optimize for energy is how to measure things. On a smart watch we had hardware that told us the energy consumption and we could write benchmark to check if what we did paid off or not. In the case of remote server, I have not seen that kind of capability (cloud provider can complain about energy consumption, but if they don't give the tool to optimizethings for...). And optimizing without a benchmark is most of the time picking a bad guess.
