@@ -33,3 +33,6 @@
      <br> => actuellement, uniquement [HWPC (HardWare Performance Counter)](https://powerapi.org/reference/sensors/hwpc-sensor/), un outil mesurant la performance et consommation de CPUs Intel (Sandy Bridge et plus recents, donc post-2011) et AMD Zen (1,2,34). Les processeurs de type Powe/ARM/RISCV ne sont pas supportes. HWPC [exploite](https://github.com/powerapi-ng/hwpc-sensor) l'API `perf` du kernel Linux, uniquement accessible au *root*, et la technologie RAPL. Le senseur ne peut pas etre utilise dans une machine virtuelle.
      	- une *Formula* qui calcule une estimation de la consommation electrique du software a partir des donnees collectees par le *Sensor*
        <br> => actuellement, uniquement [SmartWatts](https://powerapi.org/reference/formulas/smartwatts/), qui fonctionne avec les donnees du HWPC et estime la consommation electrique d'un programme [qui tourne dans un *container*](https://github.com/powerapi-ng/smartwatts-formula), un environnement isole qui peut etre un container Docker, un pod Kubernetes, une machine virtuelle Libvirt, etc. L'explication du systeme, notamment le choix des metriques utilisees et la methode d'estimation de la consommation electrique, est detaillee dans [une publication scientifique de 2020](https://inria.hal.science/hal-02470128).
+
+## Outils Windows
+- [HWInfo](https://www.hwinfo.com/download/)
