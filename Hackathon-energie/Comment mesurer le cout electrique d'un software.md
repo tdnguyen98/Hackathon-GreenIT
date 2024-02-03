@@ -58,8 +58,13 @@ Yes, the way you code your source code can impact the power consumption of the d
     
 7. **Hardware-Specific Considerations:** Understanding the architecture and features of the target hardware is essential. Some hardware platforms offer features like dynamic voltage and frequency scaling (DVFS) or power-gating, which can be leveraged to optimize power usage.
     
-8. **Energy Profiling:** Use profiling tools to analyze the energy consumption of your code. Tools like `perf` on Linux or vendor-specific tools can provide insights into which parts of your code consume the most energy, helping you focus optimization efforts.
-    
+8. **Energy Profiling:** Use profiling tools to analyze the energy consumption of your code. Tools like `perf` on Linux or vendor-specific tools can provide insights into which parts of your code consume the most energy, helping you focus optimization efforts. For software developers, starting with profiling to identify major energy consumers and then applying targeted optimizations can be an effective strategy.
+
+9. **Energy-Aware Scheduling and Resource Allocation**
+In environments like data centers or cloud computing platforms, energy-aware scheduling algorithms can dynamically adjust the allocation of computational tasks based on current power consumption and thermal states, thus optimizing overall energy use.
+
+10. **Use of Green Frameworks and Libraries**
+Some frameworks and libraries are designed with energy efficiency in mind, providing developers with tools and functions that are optimized for lower power consumption. For example, GreenSQL for database queries or energy-efficient networking libraries that minimize data transfer times and power use.
 
 It's important to note that the impact of code optimizations on power consumption may vary depending on the specific hardware architecture and the workload of the application. Therefore, it's recommended to profile and measure the energy consumption of your code using specialized tools on the target platform to make informed decisions about optimizations.
 
