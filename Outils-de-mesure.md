@@ -1,4 +1,13 @@
 # Outils existants
+Kieni et al. 2020:<br>
+- Taux d'erreur eleve des methodes basees software (vs outils de mesure hardware) et methodes pour le corriger:
+>While standard operating system metrics (CPU, memory, disk, or network), directly computed by the kernel, tend to exhibit a large error rate due to their lack of precision [11],[13], HWPC can be directly gathered from the processor (e.g., number of retired instructions, cache misses, non-halted cycles). Modern processors provide a variable number of HWPC events, depending on the generation of the micro-architectures and the model of the CPU. As shown by Bellosa [10] and Bircher [14], some HWPC events are highly correlated with the processor power consumption, while the authors in [15]
+concluded that not all HPC are relevant, as they may not be directly correlated with dynamic power.
+><br><br>C. Limitations & Opportunities<br>
+>To the best of our knowledge, the state of the art in hardware power meters often imposes hardware investments to provide power measurements with an high accuracy, but a coarse granularity, while **software-defined power meters target finegrained power monitoring, but often fail to reach high accuracy on any architecture and/or workload**.
+><br>Power modeling often builds on these raw metrics to apply learning techniques [16] to correlate the metrics with hardware power measurements using various regression models, which are so far mostly linear [12]. 
+
+
 ## Hardware
 - [JouleScope](https://www.joulescope.com/):
 >This is a hardware-based tool rather than software, but it's worth mentioning because it can monitor the energy use of any device it's connected to, regardless of the operating system.
