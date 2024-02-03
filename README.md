@@ -6,6 +6,7 @@
 - Isoler les activites sur une machine
 - Le monitoring (par exemple *Activity Monitor*) consomme lui-même beaucoup de ressources et peut donc fausser ou compliquer le calcul
 - marge d'erreur plus grosse que consommation du programme pour beaucoup de programmes
+- Pas vraiment calculable directement, du coup c'est une estimation, et pour arriver au kWh on fait des estimations sur des estimnations sur des estimations, du coup la marge d'erreur est enorme, et le calcul perd en pertinence. Du coup les approches existantes sont pas tellement sur la mesure precise mais plus thematique ou fonctionnelle, par exemple on voit que telle application est gourmande en CPU, donc on utilise des pratiques specifiques pour optimiser son usage du CPU, ou de la memoire, etc. sans chercher un benchmark precis qui est difficilement atteignable.
 
 ### Questions
 - A quel point la surcharge compte dans la consommation totale ?
