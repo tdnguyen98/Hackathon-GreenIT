@@ -49,6 +49,10 @@ int main(int argc, char *argv[]) {
 	double moyenne_GPU = 0;
 	double moyenne_ANE = 0;
 	double moyenne_comb = 0;
+	double deviation_CPU = 0;
+	double deviation_GPU = 0;
+	double deviation_ANE = 0;
+	double deviation_comb = 0;
 
     /* Open the command for reading. */
 	if (argc != 2)
@@ -102,28 +106,39 @@ int main(int argc, char *argv[]) {
 	moyenne_GPU = total_energy_GPU/j;
 	moyenne_ANE = total_energy_ANE/k;
 	moyenne_comb = total_energy_comb/l;
+	deviation_CPU = sqrt(((total_energy_CPU - moyenne_CPU) * (total_energy_CPU - moyenne_CPU))/(i - 1))
+	deviation_GPU = sqrt(((total_energy_GPU - moyenne_GPU) * (total_energy_GPU - moyenne_GPU))/(j - 1))
+	deviation_ANE = sqrt(((total_energy_ANE - moyenne_ANE) * (total_energy_ANE - moyenne_ANE))/(k - 1))
+	deviation_comb = sqrt(((total_energy_comb - moyenne_comb) * (total_energy_comb - moyenne_comb))/(l - 1))
 	printf("\n");
 	printf("CPU Power min:\t\t%.2f\t\t", min_value_CPU);
 	if (max_value_CPU > 10000)
 		printf("CPU Power max: \t\t%.2f\t", max_value_CPU);
 	else
 		printf("CPU Power max: \t\t%.2f\t\t", max_value_CPU);
-	printf("CPU Power avg: \t\t%.2f\n", total_energy_CPU/i);
+	printf("CPU Power avg: \t\t%.2f\t\t", total_energy_CPU/i);
+	print("CPU Power deviation: \t\t%.2\n", deviation_CPU);
+	
 	printf("GPU Power min:\t\t%.2f\t\t", min_value_GPU);
 	if (max_value_GPU > 10000)
 		printf("GPU Power max: \t\t%.2f\t", max_value_GPU);
 	else
 		printf("GPU Power max: \t\t%.2f\t\t", max_value_GPU);
 	printf("GPU Power avg: \t\t%.2f\n", total_energy_GPU/j);
+	print("GPU Power deviation: \t\t%.2\n", deviation_GPU);
+	
 	printf("ANE Power min:\t\t%.2f\t\t", min_value_ANE);
 	printf("ANE Power max: \t\t%.2f\t\t", max_value_ANE);
 	printf("ANE Power avg: \t\t%.2f\n", total_energy_ANE/k);
+	print("ANE Power deviation: \t\t%.2\n", deviation_ANE);
+	
 	printf("Combined Power min: \t%.2f\t\t", min_value_comb);
 	if (max_value_comb > 10000)
 		printf("Combined Power max: \t%.2f\t", max_value_comb);
 	else
 		printf("Combined Power max: \t%.2f\t\t", max_value_comb);
 	printf("Combined Power avg:\t%.2f\n", total_energy_comb/l);
+	print("Combined Power deviation: \t\t%.2\n", deviation_comb);
 
     /* close */
     pclose(fp);
