@@ -12,10 +12,10 @@ networksetup -setairportpower en0 off
 
 mkdir -p power_consumption
 
-# Idle test of power consumption: §600 samples, every 200ms (2 minute)
+# Idle test of power consumption: 600 samples, every 200ms (2 minutes)
 sudo powermetrics -i 200 -n 600 --samplers cpu_power | awk '/CPU Power:/ || /GPU Power:/ || /ANE Power:/ || /Combined Power/ {gsub(/[^0-9]/,""); print}' >> power_consumption/idle_power_consumption.txt
 
-# Benchmark of application power consumption: §600 samples, every 200ms (2 minutes)
+# Benchmark of application power consumption: 600 samples, every 200ms (2 minutes)
 open $program_path & sudo powermetrics -i 200 -n 600 --samplers cpu_power | awk '/CPU Power:/ || /GPU Power:/ || /ANE Power:/ || /Combined Power/ {gsub(/[^0-9]/,""); print}' >> power_consumption/program_power_consumption.txt
 pkill -f $program_path
 
@@ -24,9 +24,9 @@ pkill -f $program_path
 if [ $? -eq 0 ]; then
 	./a.out "power_consumption/program_power_consumption.txt" "120"
 	if [ $? -eq 0 ]; then
-		echo "\nSuccess"
+		echo "Success"
 	else
-		echo "\nFailed"
+		echo "Failed"
 	fi
 else
 	echo "Failed"
