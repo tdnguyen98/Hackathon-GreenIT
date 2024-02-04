@@ -152,7 +152,8 @@ int main(int argc, char *argv[]) {
 	printf("Combined Power avg:\t%.2f\n", moyenne_comb);
 	print("Combined Power deviation: \t\t%.2\n", deviation_comb);
 
-	printf("Wh consumed during test: \t%.7f\n", consumption);
+		// precision: if 5mW average over 5 minutes, then total consumption is 0.0004 Wh. (Precision: +-1 mW)
+	printf("Wh consumed during test: \t%.4f\n", consumption);
 
     /* close */
     pclose(fp);
