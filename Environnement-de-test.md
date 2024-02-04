@@ -5,9 +5,6 @@
 ## Check for and install macOS updates (Note: This may require manual intervention)
 `softwareupdate -ia`
 
-## Update installed applications from the App Store
-`mas upgrade`
-
 ## Disable automatic macOS software updates
 `sudo softwareupdate --schedule off`
 
