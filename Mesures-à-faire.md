@@ -23,8 +23,8 @@ pour l'usage général d'énergie, par exemple sur 1 minute, des intervalles plu
 <br>Notre choix: 200ms en travail pour capturer les pics éventuels, ce qui fait 1500 observations au total pour chaque test de 5 minute, et 200 ms au repos aussi pour la cohérence, et parce que le fichier généré n'est pas gros
 
 ## Benchmarking
-- Repos: voir document environnement de test
-- Travail: Jeu vidéo Théo – lancer commande pour faire danser personnages le temps du benchmark
+- Repos: voir document [Environnement-de-test.md](Environnement-de-test.md)
+- Travail: Jeu vidéo Théo – lancer commande pour faire danser personnage le temps du benchmark
 
 ## Statistiques
 - Moyenne simple (sur la durée de test)
