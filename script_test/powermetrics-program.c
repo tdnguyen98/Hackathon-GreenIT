@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
 		printf("CPU Power max: \t\t%.2f\t", max_value_CPU);
 	else
 		printf("CPU Power max: \t\t%.2f\t\t", max_value_CPU);
-	printf("CPU Power avg: \t\t%.2f\t\t", total_energy_CPU/i);
+	printf("CPU Power avg: \t\t%.2f\t\t", moyenne_CPU);
 	print("CPU Power deviation: \t\t%.2\n", deviation_CPU);
 	
 	printf("GPU Power min:\t\t%.2f\t\t", min_value_GPU);
@@ -124,12 +124,12 @@ int main(int argc, char *argv[]) {
 		printf("GPU Power max: \t\t%.2f\t", max_value_GPU);
 	else
 		printf("GPU Power max: \t\t%.2f\t\t", max_value_GPU);
-	printf("GPU Power avg: \t\t%.2f\n", total_energy_GPU/j);
+	printf("GPU Power avg: \t\t%.2f\n", moyenne_GPU);
 	print("GPU Power deviation: \t\t%.2\n", deviation_GPU);
 	
 	printf("ANE Power min:\t\t%.2f\t\t", min_value_ANE);
 	printf("ANE Power max: \t\t%.2f\t\t", max_value_ANE);
-	printf("ANE Power avg: \t\t%.2f\n", total_energy_ANE/k);
+	printf("ANE Power avg: \t\t%.2f\n", moyenne_ANE);
 	print("ANE Power deviation: \t\t%.2\n", deviation_ANE);
 	
 	printf("Combined Power min: \t%.2f\t\t", min_value_comb);
@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
 		printf("Combined Power max: \t%.2f\t", max_value_comb);
 	else
 		printf("Combined Power max: \t%.2f\t\t", max_value_comb);
-	printf("Combined Power avg:\t%.2f\n", total_energy_comb/l);
+	printf("Combined Power avg:\t%.2f\n", moyenne_comb);
 	print("Combined Power deviation: \t\t%.2\n", deviation_comb);
 
     /* close */
