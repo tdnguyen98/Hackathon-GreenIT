@@ -15,7 +15,7 @@ Pour vérifier précisions des intervalles de sampling, une partie du script l'e
 
 ## Benchmarking
 - Idle: voir ChatGPT Francis
-- Travail: Jeu vidéo Théo: lancer commande pour faire danser personnages le temps du benchmark
+- Travail: Jeu vidéo Théo – lancer commande pour faire danser personnages le temps du benchmark
 
 # Statistiques
 - Moyenne simple
