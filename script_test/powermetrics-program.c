@@ -109,17 +109,15 @@ int main(int argc, char *argv[]) {
 	moyenne_ANE = total_energy_ANE/k;
 	moyenne_comb = total_energy_comb/l;
 
-	// standard deviation
+	/* standard deviation */
 	deviation_CPU = sqrt(((total_energy_CPU - moyenne_CPU) * (total_energy_CPU - moyenne_CPU))/(i - 1));
 	deviation_GPU = sqrt(((total_energy_GPU - moyenne_GPU) * (total_energy_GPU - moyenne_GPU))/(j - 1));
 	deviation_ANE = sqrt(((total_energy_ANE - moyenne_ANE) * (total_energy_ANE - moyenne_ANE))/(k - 1));
 	deviation_comb = sqrt(((total_energy_comb - moyenne_comb) * (total_energy_comb - moyenne_comb))/(l - 1));
 
-	// total Wh consumption calculation
-	// consumption_idle = 
-
-		// X mWatts == X / 1000 Watts –––– 1 Watt sur 5 minute = 1 / 60 Watt/hour
-	consumption = (moyenne_comb / 60000);
+	/* total Wh consumption calculation */
+		/* X mWatts == (X / 1000) Watts && 1 Watt for 5 minutes = (1 / 12) Watt for 1 hour (Wh) */
+	consumption = (moyenne_comb / 12000);
 	
 		
 	printf("\n");
@@ -152,7 +150,7 @@ int main(int argc, char *argv[]) {
 	printf("Combined Power avg:\t%.2f\n", moyenne_comb);
 	print("Combined Power deviation: \t\t%.2\n", deviation_comb);
 
-		// precision: if 5mW average over 5 minutes, then total consumption is 0.0004 Wh. (Precision: +-1 mW)
+		/* precision: if 5mW average over 5 minutes, then total consumption is 0.0004 Wh. (Precision: +-1 mW) */
 	printf("Wh consumed during test: \t%.4f\n", consumption);
 
     /* close */
