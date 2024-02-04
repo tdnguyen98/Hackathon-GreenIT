@@ -42,7 +42,7 @@ float	max(float *arr, int n)
 }
 
 int main(int argc, char *argv[]) {
-	FILE *file = fopen(argv[2], "r");
+	FILE *file = fopen(argv[1], "r");
     if (file == NULL) {
         perror("Error opening file");
         return 1;
@@ -106,28 +106,28 @@ int main(int argc, char *argv[]) {
 	else
 		printf("CPU Power max: \t\t%.2f\t\t", max_cpu);
 	printf("CPU Power avg: \t\t%.2f\t\t", average_cpu);
-	print("CPU Power deviation: \t\t%.2\n", deviation_cpu);
+	printf("CPU Power deviation: \t\t%.2f\n", deviation_cpu);
 	
 	printf("GPU Power min:\t\t%.2f\t\t", min_gpu);
 	if (max_gpu > 10000)
 		printf("GPU Power max: \t\t%.2f\t", max_gpu);
 	else
 		printf("GPU Power max: \t\t%.2f\t\t", max_gpu);
-	printf("GPU Power avg: \t\t%.2f\n", average_gpu);
-	print("GPU Power deviation: \t\t%.2\n", deviation_gpu);
+	printf("GPU Power avg: \t\t%.2f\t\t", average_gpu);
+	printf("GPU Power deviation: \t\t%.2f\n", deviation_gpu);
 	
 	printf("ANE Power min:\t\t%.2f\t\t", min_ane);
 	printf("ANE Power max: \t\t%.2f\t\t", max_ane);
-	printf("ANE Power avg: \t\t%.2f\n", average_ane);
-	print("ANE Power deviation: \t\t%.2\n", deviation_ane);
+	printf("ANE Power avg: \t\t%.2f\t\t", average_ane);
+	printf("ANE Power deviation: \t\t%.2f\n", deviation_ane);
 	
 	printf("Combined Power min: \t%.2f\t\t", min_tot);
 	if (max_tot > 10000)
 		printf("Combined Power max: \t%.2f\t", max_tot);
 	else
 		printf("Combined Power max: \t%.2f\t\t", max_tot);
-	printf("Combined Power avg:\t%.2f\n", average_total);
-	print("Combined Power deviation: \t\t%.2\n", deviation_total);
+	printf("Combined Power avg:\t%.2f\t\t", average_total);
+	printf("Combined Power deviation: \t%.2f\n", deviation_total);
 
     return 0;
 }
