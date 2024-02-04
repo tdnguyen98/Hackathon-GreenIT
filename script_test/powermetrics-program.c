@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
 	double deviation_GPU = 0;
 	double deviation_ANE = 0;
 	double deviation_comb = 0;
+	double consumption = 0;
 
     /* Open the command for reading. */
 	if (argc != 2)
@@ -102,14 +103,25 @@ int main(int argc, char *argv[]) {
 			l += 1;
         }
     }
+	// average
 	moyenne_CPU = total_energy_CPU/i;
 	moyenne_GPU = total_energy_GPU/j;
 	moyenne_ANE = total_energy_ANE/k;
 	moyenne_comb = total_energy_comb/l;
-	deviation_CPU = sqrt(((total_energy_CPU - moyenne_CPU) * (total_energy_CPU - moyenne_CPU))/(i - 1))
-	deviation_GPU = sqrt(((total_energy_GPU - moyenne_GPU) * (total_energy_GPU - moyenne_GPU))/(j - 1))
-	deviation_ANE = sqrt(((total_energy_ANE - moyenne_ANE) * (total_energy_ANE - moyenne_ANE))/(k - 1))
-	deviation_comb = sqrt(((total_energy_comb - moyenne_comb) * (total_energy_comb - moyenne_comb))/(l - 1))
+
+	// standard deviation
+	deviation_CPU = sqrt(((total_energy_CPU - moyenne_CPU) * (total_energy_CPU - moyenne_CPU))/(i - 1));
+	deviation_GPU = sqrt(((total_energy_GPU - moyenne_GPU) * (total_energy_GPU - moyenne_GPU))/(j - 1));
+	deviation_ANE = sqrt(((total_energy_ANE - moyenne_ANE) * (total_energy_ANE - moyenne_ANE))/(k - 1));
+	deviation_comb = sqrt(((total_energy_comb - moyenne_comb) * (total_energy_comb - moyenne_comb))/(l - 1));
+
+	// total Wh consumption calculation
+	// consumption_idle = 
+
+		// X mWatts == X / 1000 Watts –––– 1 Watt sur 5 minute = 1 / 60 Watt/hour
+	consumption = (moyenne_comb / 60000);
+	
+		
 	printf("\n");
 	printf("CPU Power min:\t\t%.2f\t\t", min_value_CPU);
 	if (max_value_CPU > 10000)
@@ -139,6 +151,8 @@ int main(int argc, char *argv[]) {
 		printf("Combined Power max: \t%.2f\t\t", max_value_comb);
 	printf("Combined Power avg:\t%.2f\n", moyenne_comb);
 	print("Combined Power deviation: \t\t%.2\n", deviation_comb);
+
+	printf("Wh consumed during test: \t%.7f\n", consumption);
 
     /* close */
     pclose(fp);
