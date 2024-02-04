@@ -14,7 +14,7 @@ concluded that not all HPC are relevant, as they may not be directly correlated 
 
 ## Software
 ### Apps
-- Apps comme: Mac Power Monitor, ...
+- Apps comme: Mac Power Monitor, HWInfo...
 
 ### Outils de fabricants
 - RAPL (Running Average Power Limit)
