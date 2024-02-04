@@ -133,9 +133,7 @@ int main(int argc, char *argv[]) {
 }
 
 
-
-
-/*double	get_value(char *s)
+/* double	get_value(char *s)
 {
 	char *number;
 	double value;
@@ -187,7 +185,7 @@ int main(int argc, char *argv[]) {
 	double deviation_comb = 0;
 	double consumption = 0;
 
-    /* Open the command for reading. */
+    // Open the command for reading.
 	if (argc != 2)
 		return (1);
     fp = popen(argv[1], "r");
@@ -196,7 +194,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    /* Read the output a line at a time - output it. */
+    // Read the output a line at a time - output it.
     while (fgets(path, sizeof(path)-1, fp) != NULL) {
         if (strstr(path, "CPU Power") != NULL) {
             value_CPU = get_value(path);
@@ -241,14 +239,14 @@ int main(int argc, char *argv[]) {
 	moyenne_ANE = total_energy_ANE/k;
 	moyenne_comb = total_energy_comb/l;
 
-	/* standard deviation */
+	// standard deviation
 	deviation_CPU = sqrt(((total_energy_CPU - moyenne_CPU) * (total_energy_CPU - moyenne_CPU))/(i - 1));
 	deviation_GPU = sqrt(((total_energy_GPU - moyenne_GPU) * (total_energy_GPU - moyenne_GPU))/(j - 1));
 	deviation_ANE = sqrt(((total_energy_ANE - moyenne_ANE) * (total_energy_ANE - moyenne_ANE))/(k - 1));
 	deviation_comb = sqrt(((total_energy_comb - moyenne_comb) * (total_energy_comb - moyenne_comb))/(l - 1));
 
-	/* total Wh consumption calculation */
-		/* X mWatts == (X / 1000) Watts && 1 Watt for 5 minutes = (1 / 12) Watt for 1 hour (Wh) */
+	// total Wh consumption calculation
+		// X mWatts == (X / 1000) Watts && 1 Watt for 5 minutes = (1 / 12) Watt for 1 hour (Wh)
 	consumption = (moyenne_comb / 12000);
 	
 		
@@ -282,11 +280,11 @@ int main(int argc, char *argv[]) {
 	printf("Combined Power avg:\t%.2f\n", moyenne_comb);
 	print("Combined Power deviation: \t\t%.2\n", deviation_comb);
 
-		/* precision: if 5mW average over 5 minutes, then total consumption is 0.0004 Wh. (Precision: +-1 mW) */
+		// precision: if 5mW average over 5 minutes, then total consumption is 0.0004 Wh. (Precision: +-1 mW)
 	printf("Wh consumed during test: \t%.4f\n", consumption);
 
-    /* close */
+    // close
     pclose(fp);
 
     return 0;
-}*/
+} */
