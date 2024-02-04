@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
         perror("Error opening file");
         return 1;
     }
-
+	
     float cpu_wattages[5000];  // Assuming a maximum of 100 entries
     float gpu_wattages[5000];
     float ane_wattages[5000];
@@ -97,6 +97,12 @@ int main(int argc, char *argv[]) {
     float deviation_gpu = calculate_deviation(gpu_wattages, average_gpu, entry_count);
     float deviation_ane = calculate_deviation(ane_wattages, average_ane, entry_count);
     float deviation_total = calculate_deviation(total_wattages, average_total, entry_count);
+	
+	
+	float consumption = 0;
+	consumption = (average_total / 12000);
+		
+	
 	// Print averages
 
 	printf("\n");
@@ -129,6 +135,8 @@ int main(int argc, char *argv[]) {
 	printf("Combined Power avg:\t%.2f\t\t", average_total);
 	printf("Combined Power deviation: \t%.2f\n", deviation_total);
 
+	printf("Wh consumed during test: \t%.4f\n", consumption);
+	
     return 0;
 }
 
