@@ -12,7 +12,7 @@
 - Charge au repos (idle): 5 minutes
 - Charge de travail: 5 minutes
 
-- Justification: (source: GPT4)
+- Justification:
   - GPT4 proposait 15 minutes ou plus de monitoring au repos, mais on a décidé 5 minutes pour simplifier notre test, avec notre script et la contrainte de temps
   - Le risque est le système n'ait pas eu le temps de se stabiliser, mais on peut le contrebalancer en limitant l'activité sur la machine et en faisant plusieurs tests. 
 
