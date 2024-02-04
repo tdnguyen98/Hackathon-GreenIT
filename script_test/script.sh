@@ -10,8 +10,8 @@ networksetup -setairportpower en0 off
 ./a.out "/usr/bin/sudo /usr/bin/powermetrics -n 1 -i 1000 --samplers cpu_power"
 
 if [ $? -eq 0 ]; then
-# Benchmark of application power consumption
-	open $program_path & ./a.out "/usr/bin/sudo /usr/bin/powermetrics -n 6 -i 1000 --samplers cpu_power"
+# Benchmark of application power consumption: 300 samples, every 200ms (1 minute)
+	open $program_path & ./a.out "/usr/bin/sudo /usr/bin/powermetrics -n 300 -i 200 --samplers cpu_power"
  	sleep 6
 	pkill -f $program_path
 else
