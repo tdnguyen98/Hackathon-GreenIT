@@ -12,3 +12,4 @@
 - Charge de travail: 1 min (jeu vidéo Théo: lancer commande pour faire danser personnages au début du benchmark)
 - Intervalles: 200 ms (source: GPT4 suggère 100-500ms pour applications dynamiques, 1000-2000ms pour application à charge de travail plus stables)
 
+## 
